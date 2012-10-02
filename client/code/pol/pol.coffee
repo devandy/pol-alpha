@@ -1,14 +1,24 @@
 Workspace = Backbone.Router.extend(
   routes:
-    "alert": "alert" # #help
+    "lobby": "lobby",
+    "game": "game"
 
-  alert: ->
-    alert('clicked!')
+  lobby: ->
+    $('#content').children().remove()
+    $('#content').append ss.tmpl['lobby'].render()
+
+  game: ->
+    ss.rpc 'pol.startGame', (response) ->
+      $('#content').children().remove()
+      $('#content').append ss.tmpl['game'].render()
+      console.log(response)
 )
-window.router = new Workspace
 
-Backbone.history.start()
+ss.rpc 'pol.getCurrentUser', (response) ->
+  if response
+    window.router = new Workspace
+    Backbone.history.start()
+    $('#toolbar').append ss.tmpl['toolbar'].render(user: response)
+  else
+    $('#content').append ss.tmpl['login'].render()
 
-$('#content').append ss.tmpl['login'].render()
-
-$('h1').bind('dblclick', -> window.location = "#alert")

@@ -1,0 +1,86 @@
+border-radius()
+    -moz-border-radius arguments
+    -webkit-border-radius arguments
+    border-radius arguments
+
+box-shadow()
+    -moz-box-shadow arguments
+    -webkit-box-shadow arguments
+    box-shadow arguments
+
+card-width = 64px
+card-height = 87px
+card-border-width = 2px
+card-total-height = card-height + ((card-border-width) * 2)
+card-total-width = card-width + ((card-border-width) * 2)
+
+avatar-width = 50px
+avatar-height = 50px
+
+.bordered, .soft-bordered
+    border 1px solid black
+.soft-bordered
+    border-radius 3px
+    box-shadow 0 0 .5em rgba(0, 0, 0, .8)
+.game
+    width 800px
+    height 400px
+    float left
+    img
+        height 100%
+        width 100%
+.card, .card-magnification, .avatar
+    background-color black
+.card
+    border-width card-border-width
+    position absolute
+    width card-width
+    height card-height
+.card.selected
+    border-color #F39814
+.card-slot
+    width card-total-width
+    height card-total-height
+    position relative
+    float left
+.battlefield
+    position relative
+    background #ddf
+    width 100%
+    height 80%
+.player
+    background #ffd
+    width 100%
+    height card-total-height
+.status
+    height 100%
+    width 10%
+    float left
+    table
+        width 100%
+        height 100%
+    .avatar
+        height avatar-height
+        width avatar-width
+        margin-left auto
+        margin-right auto
+    .hand-count, .life
+        margin-left auto
+        margin-right auto
+        width 20px
+        text-align center
+    .life
+        cursor pointer
+.hand
+    height 100%
+    width 80%
+    float left
+.control-panel
+    height 100%
+    width 20%
+    float left
+.card-magnification
+    height 190px
+    width 140px
+    margin-left auto
+    margin-right auto

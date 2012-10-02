@@ -4,13 +4,17 @@ var http = require('http'),
 
 ss.client.define('pol', {
     view: 'pol.html',
-    css:  ['libs'],
+    css:  [
+        'game.styl',
+        'libs/bootstrap.min.css',
+        'libs/bootstrap-responsive.min.css',
+        'libs/jquery-ui-custom.css',
+    ],
     code: [
         'libs/jquery.min.js',
         'libs/jquery-ui.min.js',
         'libs/jquery.ui.position.js',
         'libs/jquery-transit.min.js',
-        'libs/jquery.contextMenu.js',
         'libs/underscore.min.js',
         'libs/backbone-min.js',
         'libs/bootstrap.min.js',
@@ -18,9 +22,6 @@ ss.client.define('pol', {
     tmpl: '*'
 });
 
-ss.http.route('/chat', function(req, res){
-  res.serveClient('chat');
-});
 ss.http.route('/', function(req, res){
     res.serveClient('pol');
 });
@@ -36,6 +37,12 @@ everyauth.facebook
         return true;
     })
     .redirectPath('/');
+everyauth.everymodule.handleLogout( function (req, res) {
+    delete req.session.userId;
+    req.session.save();
+    req.logout(); // The logout method is added for you by everyauth, too
+    this.redirect(res, this.logoutRedirectPath());
+});
 
 ss.http.middleware.prepend(ss.http.connect.bodyParser());
 ss.http.middleware.append(everyauth.middleware());
