@@ -1,32 +1,29 @@
-// My SocketStream 0.3 app
-
 var http = require('http'),
     ss = require('socketstream'),
     everyauth = require('everyauth');
 
-// Define a single-page client called 'main'
-ss.client.define('main', {
-  view: 'app.html',
-  css:  ['libs/reset.css', 'app.styl'],
-  code: ['libs/jquery.min.js', 'app'],
-  tmpl: '*'
+ss.client.define('pol', {
+    view: 'pol.html',
+    css:  ['libs'],
+    code: [
+        'libs/jquery.min.js',
+        'libs/jquery-ui.min.js',
+        'libs/jquery.ui.position.js',
+        'libs/jquery-transit.min.js',
+        'libs/jquery.contextMenu.js',
+        'libs/underscore.min.js',
+        'libs/backbone-min.js',
+        'libs/bootstrap.min.js',
+        'pol'],
+    tmpl: '*'
 });
 
-// Serve this client on the root URL
-ss.http.route('/', function(req, res){
-  res.serveClient('main');
+ss.http.route('/chat', function(req, res){
+  res.serveClient('chat');
 });
-everyauth.twitter
-    .consumerKey('CMkKT5wVGNukREhvC68M7g')
-    .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
-    .findOrCreateUser( function (session, accessToken, accessTokenSecret, twitterUserMetadata) {
-        var userName = twitterUserMetadata.screen_name;
-        console.log('Twitter Username is', userName);
-        session.userId = userName;
-        session.save();
-        return true;
-    })
-    .redirectPath('/');
+ss.http.route('/', function(req, res){
+    res.serveClient('pol');
+});
 everyauth.facebook
     .scope('email')
     .appId('262276250559418')
@@ -59,3 +56,18 @@ server.listen(3000);
 
 // Start SocketStream
 ss.start(server);
+
+
+
+
+//everyauth.twitter
+//    .consumerKey('CMkKT5wVGNukREhvC68M7g')
+//    .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
+//    .findOrCreateUser( function (session, accessToken, accessTokenSecret, twitterUserMetadata) {
+//        var userName = twitterUserMetadata.screen_name;
+//        console.log('Twitter Username is', userName);
+//        session.userId = userName;
+//        session.save();
+//        return true;
+//    })
+//    .redirectPath('/pol');
