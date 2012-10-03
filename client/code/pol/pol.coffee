@@ -1,24 +1,26 @@
-Workspace = Backbone.Router.extend(
+Views = require "./views"
+Core = require "./core"
+
+Router = Backbone.Router.extend(
   routes:
-    "lobby": "lobby",
+    "": "lobby",
     "game": "game"
 
   lobby: ->
-    $('#content').children().remove()
-    $('#content').append ss.tmpl['lobby'].render()
+    $('#content').html new Views.LobbyView().render().el
 
   game: ->
     ss.rpc 'pol.startGame', (response) ->
-      $('#content').children().remove()
-      $('#content').append ss.tmpl['game'].render()
-      console.log(response)
+      game = Core.Game.parse(response)
+      $('#content').html new Views.GameView(game).render().el
 )
 
 ss.rpc 'pol.getCurrentUser', (response) ->
+  #console.log response
   if response
-    window.router = new Workspace
+    window.router = new Router
     Backbone.history.start()
-    $('#toolbar').append ss.tmpl['toolbar'].render(user: response)
+    $('#toolbar').html new Views.ToolbarView().render(user: response).el
   else
-    $('#content').append ss.tmpl['login'].render()
+    $('#content').html ss.tmpl['login'].render()
 

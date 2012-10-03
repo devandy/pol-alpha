@@ -15,7 +15,7 @@ ss.client.define('pol', {
         'libs/jquery-ui.min.js',
         'libs/jquery.ui.position.js',
         'libs/jquery-transit.min.js',
-        'libs/underscore.min.js',
+        'libs/underscore.js',
         'libs/backbone-min.js',
         'libs/bootstrap.min.js',
         'pol'],
@@ -31,7 +31,6 @@ everyauth.facebook
     .appSecret('291a6d02a5026ce17d00c7f35716a879')
     .findOrCreateUser( function (session, accessToken, accessTokExtra, fbUserMetadata) {
         var userName = fbUserMetadata.name;
-        console.log('Facebook Username is', userName);
         session.userId = userName;
         session.save();
         return true;
@@ -72,7 +71,6 @@ ss.start(server);
 //    .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
 //    .findOrCreateUser( function (session, accessToken, accessTokenSecret, twitterUserMetadata) {
 //        var userName = twitterUserMetadata.screen_name;
-//        console.log('Twitter Username is', userName);
 //        session.userId = userName;
 //        session.save();
 //        return true;
