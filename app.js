@@ -6,19 +6,13 @@ ss.client.define('pol', {
     view: 'pol.html',
     css:  [
         'game.styl',
-        'libs/bootstrap.min.css',
-        'libs/bootstrap-responsive.min.css',
-        'libs/jquery-ui-custom.css',
+        'libs'
     ],
     code: [
-        'libs/jquery.min.js',
-        'libs/jquery-ui.min.js',
-        'libs/jquery.ui.position.js',
-        'libs/jquery-transit.min.js',
-        'libs/underscore.js',
-        'libs/backbone-min.js',
-        'libs/bootstrap.min.js',
-        'pol'],
+        'libs',
+        'pol',
+        'system'
+    ],
     tmpl: '*'
 });
 

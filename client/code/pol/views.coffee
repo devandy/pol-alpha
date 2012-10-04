@@ -35,7 +35,7 @@ CardView = Backbone.View.extend
 
   render: ->
     @$el
-      .html(ss.tmpl['toolbar'].render(@model.toJSON()))
+      .html(ss.tmpl['toolbar'].render(@model.attributes))
       .data('view', @)
       .draggable(helper: 'clone', opacity: 0.8, scroll: false, containment: '.game')
     @
@@ -55,9 +55,10 @@ GameView = Backbone.View.extend
   initialize: (game) ->
     @$el.html ss.tmpl['game'].render()
     @battlefield = new BattlefieldView()
-    _.each(game.cards, (card) => @battlefield.addCard new CardView(model: card))
+    _.each game.cards, (card) =>
+      @battlefield.addCard new CardView(model: card)
 
-  render: () ->
+  render: ->
     @battlefield.render()
     @
 

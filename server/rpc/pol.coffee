@@ -1,4 +1,4 @@
-Core = require("../../client/code/pol/core")
+Core = require("../../client/code/pol/shared/core")
 Storage = require("../storage")
 
 exports.actions = (req, res, ss) ->
