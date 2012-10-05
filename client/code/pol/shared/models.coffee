@@ -1,11 +1,10 @@
-_ = require('underscore')._
 uuid = require('./utils').uuid
 
 exports.Model = class Model
   constructor: (attributes = {}) ->
-    @attributes = {}
-    @observers = []
     @id = uuid()
+    @attributes = {id: @id}
+    @observers = []
     @merge(attributes)
 
   register: (observer) ->
@@ -29,34 +28,35 @@ exports.Model = class Model
 
   @parse: (rawModel) ->
     model = new Model(rawModel.attributes)
+    model.attributes.id = rawModel.id
     model.id = rawModel.id
     model
 
 
-exports.ObservableCollection = class ObservableCollection
-  constructor: ->
-    @observers = []
-
-  register: (observer) ->
-    @observers.push(observer)
-
-  push: (item) ->
-    Array.prototype.push.call(@, item);
-    @notifyObservers("Push", item)
-
-  remove: (item) ->
-    Array.prototype.remove.call(@, item);
-    @notifyObservers("Remove", item)
-
-  toRaw: ->
-    _.map(@, (item) -> item.toRaw())
-
-  @parse: (rawItems) ->
-    collection = new ObservableCollection
-    collection.push(Model.parse(item)) for item in rawItems
-    collection
-
-  # private
-
-  notifyObservers: (action) ->
-    observer["notify#{action}"](@, item) for observer in @observers
+#exports.ObservableCollection = class ObservableCollection
+#  constructor: ->
+#    @observers = []
+#
+#  register: (observer) ->
+#    @observers.push(observer)
+#
+#  push: (item) ->
+#    Array.prototype.push.call(@, item);
+#    @notifyObservers("Push", item)
+#
+#  remove: (item) ->
+#    Array.prototype.remove.call(@, item);
+#    @notifyObservers("Remove", item)
+#
+#  toRaw: ->
+#    _.map(@, (item) -> item.toRaw())
+#
+#  @parse: (rawItems) ->
+#    collection = new ObservableCollection
+#    collection.push(Model.parse(item)) for item in rawItems
+#    collection
+#
+#  # private
+#
+#  notifyObservers: (action) ->
+#    observer["notify#{action}"](@, item) for observer in @observers

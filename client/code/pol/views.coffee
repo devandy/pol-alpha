@@ -1,69 +1,174 @@
-ToolbarView = Backbone.View.extend
-  className: "container"
-
-  render: (options) ->
-    @$el.html ss.tmpl['toolbar'].render(options)
+class BaseView
+  appendTo: (widget) =>
+    widget.append @widget
     @
 
-LobbyView = Backbone.View.extend
-  className: "container"
-
-  render: ->
-    @$el.html ss.tmpl['lobby'].render()
+  renderTo: (widget) =>
+    widget.html @widget
     @
 
-BattlefieldView = Backbone.View.extend
-  el: $('.battlefield').get()
+  view: (card) =>
+    $("[cid='#{card.id}']").data('view')
 
-  initialize: ->
-    @cards = []
+  template: (name, options) =>
+    ss.tmpl[name].render(options)
 
-  addCard: (card) ->
-    @cards.push card
-    @$el.append card.el
+class ToolbarView extends BaseView
+  constructor: (@model) ->
+    @widget = $(@template('toolbar', @model.attributes))
 
-  render: ->
-    _.each(@cards, (card) -> card.render())
+class LobbyView extends BaseView
+  constructor: () ->
+    @widget = $(@template('lobby'))
 
-CardView = Backbone.View.extend
-  className: "card soft-bordered"
+class GameView extends BaseView
+  constructor: () ->
+    @widget = $(@template('game'))
 
-  events:
-    "dblclick": "onDblclick",
-    "mouseenter": "onMouseenter",
-    "click": "onClick",
-
-  render: ->
-    @$el
-      .html(ss.tmpl['toolbar'].render(@model.attributes))
+class CardView extends BaseView
+  constructor: (@controller, @model) ->
+    @CARD_WIDTH = 53
+    @CARD_HEIGHT = 72
+    @widget = $(@template('card', @model.attributes))
+      .bind('mouseenter', @onMouseEnter)
+      .bind('click', @onClick)
       .data('view', @)
       .draggable(helper: 'clone', opacity: 0.8, scroll: false, containment: '.game')
-    @
 
-  onClick: (event, ui) ->
-    @$el.toggleClass('selected')
+  move: (x, y, animate)->
+    if animate
+      @widget.transition(left: x, top: y)
+    else
+      @widget.css('left', x).css('top', y)
 
-  onMouseenter: (event, ui) ->
+  rotate: (enabled) ->
+    if enabled
+      val = (@CARD_HEIGHT-@CARD_WIDTH) / 2
+      @widget.transition(rotate: "90deg", x: "-#{val}px", y: "-#{val}px")
+    else
+      @widget.transition(rotate: "0deg", x: '0px', y: '0px')
+
+  flip: (enabled) ->
+    if enabled
+      @widget.transition(rotateY: "180deg")
+    else
+      @widget.transition(rotateY: "0deg")
+
+  #private
+
+  onClick: (event, ui) =>
+    @widget.toggleClass('selected')
+
+  onMouseEnter: (event, ui) =>
     $('.card-magnification').find('img').attr('src', @model.get('imageUrl'))
 
-  onDblclick: (event, ui) ->
-    #@notifyObservers("DoubleClick")
+class CardContainerView extends BaseView
+  constructor: (@controller, @code, @cards, selector) ->
+    @widget = $(selector)
+    _.forEach(@cards, (card) =>
+      card.register(@))
 
-GameView = Backbone.View.extend
-  className: "container"
+  containedCards: =>
+    _.filter(@cards, (card) => card.get('container') == @code)
 
-  initialize: (game) ->
-    @$el.html ss.tmpl['game'].render()
-    @battlefield = new BattlefieldView()
-    _.each game.cards, (card) =>
-      @battlefield.addCard new CardView(model: card)
+  includeView: (cardView) =>
+    _.any(@containedCards(), (card) => card.id == cardView.model.id)
 
-  render: ->
-    @battlefield.render()
-    @
+  notify: (card, attributes, remote) =>
+    if @include(card)
+      console.log "#{@widget.attr('class')}, updating card #{card.get('name')} from remote: #{remote}"
+      @moveCard(card, remote)
+      @view(card).rotate(card.get('rotated'))
+      @view(card).flip(card.get('flipped'))
 
-exports.ToolbarView = ToolbarView
+  # private
+
+  include: (card) =>
+    _.include(@containedCards(), card)
+
+class BattlefieldView extends CardContainerView
+  constructor: (controller, cards) ->
+    super(controller, 'battlefield', cards, '.battlefield')
+    @widget
+      .droppable()
+      .bind('drop', @onDrop)
+    _.forEach(@containedCards(), (card) => @moveCard(card))
+
+  # private
+
+  moveCard: (card, remote) =>
+    @view(card).move(card.get('x'), card.get('y'), remote)
+
+  onDrop: (event, ui) =>
+    card = ui.draggable
+    x = ui.position.left
+    y = ui.position.top
+    console.log "Battlefield, executing MoveCard #{card.attr('title')}"
+    @controller.execute
+      name: 'MoveCard'
+      id: card.attr('cid')
+      x: x
+      y: y
+      z: 0
+      container: 'battlefield'
+
+class HandView extends CardContainerView
+  constructor: (controller, cards) ->
+    super(controller, 'hand', cards, '.hand')
+    _.forEach(_.range(8), (index) =>
+      @widget.append(
+        $("<div class='card-slot bordered' index='#{index}'></div>")
+          .droppable()
+          .bind('drop', @onDrop)
+      )
+    )
+    _.forEach(@containedCards(), (card) => @moveCard(card))
+
+  #private
+
+  moveCard: (card) =>
+    slot = $(".card-slot[index=#{card.get('z')}]")
+    @view(card).move(slot.offset().left, slot.offset().top, true)
+
+  onDrop: (event, ui) =>
+    card = ui.draggable
+    slot = $(event.target)
+    console.log "Hand, executing command MoveCard #{card.attr('title')}"
+    @controller.execute
+      name: 'MoveCard'
+      id: card.attr('cid')
+      x: 0
+      y: 0
+      z: slot.attr('index')
+      container: 'hand'
+
+class PlayerStatusView extends BaseView
+  constructor: (@controller, @model) ->
+    @widget = $('.player').attr('cid', @model.id)
+    @widget.find('.status .avatar').attr('title', model.get('name'))
+    @widget.find('.status .avatar img').attr('src', model.get('avatar'))
+    @widget.find('.status .life').bind('click', @onClick)
+    @model.register(@)
+    @render()
+
+  notify: (player, attributes, remote) =>
+    @render()
+
+  # private
+
+  onClick: =>
+    @controller.execute
+      name: 'IncrementLife'
+      id: @model.id
+
+  render: =>
+    @widget.find('.status .life').text(@model.get('life'))
+    @widget.find('.status .hand-count').text('5')
+
 exports.LobbyView = LobbyView
-exports.BattlefieldView = BattlefieldView
-exports.CardView = CardView
+exports.ToolbarView = ToolbarView
 exports.GameView = GameView
+exports.CardView = CardView
+exports.BattlefieldView = BattlefieldView
+exports.HandView = HandView
+exports.PlayerStatusView = PlayerStatusView
