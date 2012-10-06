@@ -1,27 +1,21 @@
 uuid = require('./utils').uuid
+EventEmitter2 = require('eventemitter2').EventEmitter2
 
-exports.Model = class Model
+exports.Model = class Model extends EventEmitter2
   constructor: (attributes = {}) ->
     @id = uuid()
     @attributes = {id: @id}
-    @observers = []
     @merge(attributes)
-
-  register: (observer) ->
-    @observers.push(observer)
 
   get: (name) ->
     @attributes[name]
 
   set: (attributes, remote = false) ->
-    @merge(attributes)
-    @notifyObservers(attributes, remote)
+    @merge attributes
+    @emit 'change', attributes, remote
 
   merge: (attributes) ->
     @attributes[key] = val for key, val of attributes
-
-  notifyObservers: (attributes, remote) ->
-    observer.notify(@, attributes, remote) for observer in @observers
 
   toRaw: ->
     {id: @id, attributes: @attributes}
@@ -33,20 +27,15 @@ exports.Model = class Model
     model
 
 
-#exports.ObservableCollection = class ObservableCollection
-#  constructor: ->
-#    @observers = []
-#
-#  register: (observer) ->
-#    @observers.push(observer)
+#exports.ObservableCollection = class ObservableCollection extends EventEmitter2
 #
 #  push: (item) ->
 #    Array.prototype.push.call(@, item);
-#    @notifyObservers("Push", item)
+#    @emit 'push', item
 #
 #  remove: (item) ->
 #    Array.prototype.remove.call(@, item);
-#    @notifyObservers("Remove", item)
+#    @emit 'remove', item
 #
 #  toRaw: ->
 #    _.map(@, (item) -> item.toRaw())
@@ -55,8 +44,3 @@ exports.Model = class Model
 #    collection = new ObservableCollection
 #    collection.push(Model.parse(item)) for item in rawItems
 #    collection
-#
-#  # private
-#
-#  notifyObservers: (action) ->
-#    observer["notify#{action}"](@, item) for observer in @observers

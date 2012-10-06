@@ -65,21 +65,19 @@ class CardView extends BaseView
 class CardContainerView extends BaseView
   constructor: (@controller, @code, @cards, selector) ->
     @widget = $(selector)
-    _.forEach(@cards, (card) =>
-      card.register(@))
+    _.forEach @cards, (card) =>
+      card.on 'change', (attributes, remote) =>
+        if @include(card)
+          console.log "#{@widget.attr('class')}, updating card #{card.get('name')} from remote: #{remote}"
+          @moveCard(card, remote)
+          @view(card).rotate(card.get('rotated'))
+          @view(card).flip(card.get('flipped'))
 
   containedCards: =>
     _.filter(@cards, (card) => card.get('container') == @code)
 
   includeView: (cardView) =>
     _.any(@containedCards(), (card) => card.id == cardView.model.id)
-
-  notify: (card, attributes, remote) =>
-    if @include(card)
-      console.log "#{@widget.attr('class')}, updating card #{card.get('name')} from remote: #{remote}"
-      @moveCard(card, remote)
-      @view(card).rotate(card.get('rotated'))
-      @view(card).flip(card.get('flipped'))
 
   # private
 
@@ -148,10 +146,8 @@ class PlayerStatusView extends BaseView
     @widget.find('.status .avatar').attr('title', model.get('name'))
     @widget.find('.status .avatar img').attr('src', model.get('avatar'))
     @widget.find('.status .life').bind('click', @onClick)
-    @model.register(@)
-    @render()
-
-  notify: (player, attributes, remote) =>
+    @model.on 'change', (attributes, remote) =>
+      @render()
     @render()
 
   # private

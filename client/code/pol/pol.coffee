@@ -7,8 +7,8 @@ class CommandHandlerDecorator
   constructor: (@commandHandler) ->
 
   execute: (parameters) =>
-    ss.rpc 'pol.execute', parameters, ->
     @commandHandler.execute(parameters)
+    ss.rpc 'pol.execute', parameters
 
 Router = Backbone.Router.extend
   routes:
@@ -32,7 +32,8 @@ Router = Backbone.Router.extend
       new Views.BattlefieldView(commandHandler, game.cards)
       new Views.HandView(commandHandler, game.cards)
 
-      ss.event.on 'game:updated', (message) ->
+      ss.event.on 'game.update', (data) ->
+        console.log 'game.update'
         modelsStore.update(data.id, data.attributes)
 
 ss.rpc 'pol.getCurrentUser', (response) =>
