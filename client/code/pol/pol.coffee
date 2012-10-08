@@ -37,8 +37,8 @@ Router = Backbone.Router.extend
         modelsStore.update(data.id, data.attributes)
 
 ss.rpc 'pol.getCurrentUser', (response) =>
-  #console.log response
   if response
+    ss.heartbeatStart()
     new Views.ToolbarView(user: response).renderTo $('#toolbar')
     window.router = new Router()
     Backbone.history.start()

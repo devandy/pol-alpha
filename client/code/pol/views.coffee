@@ -15,7 +15,7 @@ class BaseView
 
 class ToolbarView extends BaseView
   constructor: (@model) ->
-    @widget = $(@template('toolbar', @model.attributes))
+    @widget = $(@template('toolbar', @model))
 
 class LobbyView extends BaseView
   constructor: () ->

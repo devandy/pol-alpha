@@ -9,7 +9,8 @@ exports.actions = (req, res, ss) ->
   #req.use('example.authenticated')
 
   getCurrentUser: ->
-    res(req.session.userId)
+    ss.users.get req.session.userId, (err, user) ->
+      res(user)
 
   startGame: =>
     new Storage.CardsArchive().load (archive) =>
