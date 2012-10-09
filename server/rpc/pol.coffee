@@ -25,6 +25,10 @@ exports.actions = (req, res, ss) ->
       @commandHandler = new Commands.CommandHandler(game)
       res(game.for(game.players[0].id))
 
+  onlineUsers: ->
+    ss.heartbeat.allConnected (sessions) ->
+      res(sessions.length)
+
   execute: (command) =>
     @commandHandler.execute(command)
 

@@ -3,7 +3,7 @@ class BaseView
     widget.append @widget
     @
 
-  renderTo: (widget) =>
+  writeTo: (widget) =>
     widget.html @widget
     @
 
@@ -20,6 +20,9 @@ class ToolbarView extends BaseView
 class LobbyView extends BaseView
   constructor: () ->
     @widget = $(@template('lobby'))
+
+  render: (model) =>
+    @widget.find('span').text(model.usersCount)
 
 class GameView extends BaseView
   constructor: () ->

@@ -7,20 +7,27 @@ class CommandHandlerDecorator
   constructor: (@commandHandler) ->
 
   execute: (parameters) =>
-    @commandHandler.execute(parameters)
+    @commandHandler.execute parameters
     ss.rpc 'pol.execute', parameters
 
 Router = Backbone.Router.extend
   routes:
     "": "lobby",
     "game": "game"
+    "logout": "logout"
+
+  logout: ->
+    ss.heartbeatStop()
+    window.location = "/logout"
 
   lobby: ->
-    new Views.LobbyView().renderTo $('#content')
+    view = new Views.LobbyView().writeTo $('#content')
+    ss.rpc 'pol.onlineUsers', (response) ->
+      view.render(usersCount: response)
 
   game: ->
     ss.rpc 'pol.startGame', (response) ->
-      new Views.GameView().renderTo $('#content')
+      new Views.GameView().writeTo $('#content')
       game = Core.Game.parse(response)
       commandHandler = new CommandHandlerDecorator(new Commands.CommandHandler(game))
       modelsStore = new Storage.ModelsStore
@@ -39,7 +46,7 @@ Router = Backbone.Router.extend
 ss.rpc 'pol.getCurrentUser', (response) =>
   if response
     ss.heartbeatStart()
-    new Views.ToolbarView(user: response).renderTo $('#toolbar')
+    new Views.ToolbarView(user: response).writeTo $('#toolbar')
     window.router = new Router()
     Backbone.history.start()
   else
