@@ -8,7 +8,6 @@ exports.ExternalAuth = class ExternalAuth
   constructor: (@users) ->
     self = @
     everyauth.facebook
-      .scope("email")
       .appId("262276250559418")
       .appSecret("291a6d02a5026ce17d00c7f35716a879")
       .findOrCreateUser((session, accessToken, accessTokExtra, profile) ->
@@ -17,11 +16,25 @@ exports.ExternalAuth = class ExternalAuth
           if err
             promise.fail "Error finding user from provider id. #{err}"
           else
-            now = new Date()
             if not user
-              self.createUser(id, profile, now, session, promise)
+              self.createUser('facebook', profile, session, promise)
             else
-              self.touchUser(user, now, session, promise)
+              self.touchUser(user, session, promise)
+        promise
+      ).redirectPath "/"
+    everyauth.twitter
+      .consumerKey('CMkKT5wVGNukREhvC68M7g')
+      .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
+      .findOrCreateUser((session, accessToken, accessTokenSecret, profile) ->
+        promise = @Promise()
+        self.users.getByProviderId profile.id, (err, user) =>
+          if err
+            promise.fail "Error finding user from provider id. #{err}"
+          else
+            if not user
+              self.createUser('twitter', profile, session, promise)
+            else
+              self.touchUser(user, session, promise)
         promise
       ).redirectPath "/"
     everyauth.everymodule.handleLogout (req, res) ->
@@ -34,23 +47,23 @@ exports.ExternalAuth = class ExternalAuth
 
   # private
 
-  createUser: (id, profile, now, session, promise) =>
+  createUser: (provider, profile, session, promise) =>
     @users.newId (err, id) =>
       if err
         promise.fail "Cannot generate new id for user. #{err}"
       else
+        now = new Date()
         user =
           id: id
-          provider: 'facebook'
+          provider: provider
           providerId: profile.id
           providerName: profile.name
-          email: profile.email
           created: now
           lastConnected: now
         @saveUser(user, session, promise)
 
-  touchUser: (user, now, session, promise) =>
-    user.lastConnected = now
+  touchUser: (user, session, promise) =>
+    user.lastConnected = new Date()
     @saveUser(user, session, promise)
 
   saveUser: (user, session, promise) =>
