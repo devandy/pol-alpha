@@ -1,4 +1,4 @@
-exports = class ModelsStore
+module.exports = class ModelsStore
   constructor:->
     @data = {}
 

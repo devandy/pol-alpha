@@ -1,0 +1,10 @@
+.gitconfig
+
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+[user]
+	name = devandy
+	email = andy.biagini@gmail.com

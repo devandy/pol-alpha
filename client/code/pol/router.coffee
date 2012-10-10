@@ -1,19 +1,24 @@
 ModelsStore = require "./models_store"
 Core = require "./shared/core"
 Commands = require "./shared/commands"
+Views = require "./views"
 
-class CommandHandlerDecorator
+class RemoteCommandHandler
   constructor: (@commandHandler) ->
 
   execute: (parameters) =>
     @commandHandler.execute parameters
     ss.rpc 'pol.execute', parameters
 
-exports = Backbone.Router.extend
+module.exports = Backbone.Router.extend
   routes:
     "": "lobby",
     "game": "game"
     "logout": "logout"
+
+  constructor: (user) ->
+    ss.heartbeatStart()
+    new Views.ToolbarView(user: user).writeTo $('#toolbar')
 
   logout: ->
     ss.heartbeatStop()
@@ -28,7 +33,7 @@ exports = Backbone.Router.extend
     ss.rpc 'pol.startGame', (response) ->
       new Views.GameView().writeTo $('#content')
       game = Core.Game.parse(response)
-      commandHandler = new CommandHandlerDecorator(new Commands.CommandHandler(game))
+      commandHandler = new RemoteCommandHandler(new Commands.CommandHandler(game))
       modelsStore = new ModelsStore
       modelsStore.addRange(game.cards)
       modelsStore.addRange(game.players)

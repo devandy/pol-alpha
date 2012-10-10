@@ -22,7 +22,26 @@
     <favorites_list name="pol-alpha" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="app.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/code/pol/app.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="9" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="router.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/code/pol/router.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="31" selection-start="591" selection-end="591" vertical-scroll-proportion="0.24313186">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -32,8 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/run.sh" />
-        <option value="$PROJECT_DIR$/update.sh" />
         <option value="$PROJECT_DIR$/client/templates/toolbar.html" />
         <option value="$PROJECT_DIR$/server/rpc/pol.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/views.coffee" />
@@ -42,11 +59,13 @@
         <option value="$PROJECT_DIR$/redis_s.sh" />
         <option value="$PROJECT_DIR$/redis_c.sh" />
         <option value="$PROJECT_DIR$/app.coffee" />
-        <option value="$PROJECT_DIR$/server/auth.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/pol.coffee" />
+        <option value="$PROJECT_DIR$/commit.sh" />
+        <option value="$PROJECT_DIR$/server/auth.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/entry.coffee" />
-        <option value="$PROJECT_DIR$/client/code/pol/app.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/models_store.coffee" />
+        <option value="$PROJECT_DIR$/notes.txt" />
+        <option value="$PROJECT_DIR$/client/code/pol/app.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/router.coffee" />
       </list>
     </option>
@@ -351,13 +370,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1375" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2781065" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2781065" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -425,27 +444,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="20" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli_redis.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="52" selection-end="52" vertical-scroll-proportion="0.078296706">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server_redis.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.078296706">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/storage.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.27884614">
@@ -460,30 +458,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/rpc/pol.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/code/pol/entry.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/code/pol/shared/core.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/code/pol/router.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="24" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -509,30 +486,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/code/pol/app.coffee">
+    <entry file="file://$PROJECT_DIR$/node_modules/socketstream/test/misc.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.026098901">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.33104396">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/code/pol/models_store.coffee">
+    <entry file="file://$PROJECT_DIR$/commit.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+        <state line="5" column="23" selection-start="58" selection-end="58" vertical-scroll-proportion="0.1304945">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/auth.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="16" selection-start="889" selection-end="889" vertical-scroll-proportion="0.57417583">
+        <state line="23" column="26" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/socketstream/test/misc.coffee">
+    <entry file="file://$PROJECT_DIR$/client/code/pol/views.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.33104396">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/code/pol/models_store.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="285" selection-end="285" vertical-scroll-proportion="0.39148352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="11" selection-end="11" vertical-scroll-proportion="0.026098901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/rpc/pol.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.8434066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/code/pol/entry.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.104395606">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/code/pol/app.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="9" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/code/pol/router.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="31" selection-start="591" selection-end="591" vertical-scroll-proportion="0.24313186">
           <folding />
         </state>
       </provider>
