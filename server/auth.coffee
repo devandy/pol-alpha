@@ -1,9 +1,5 @@
 everyauth = require("everyauth")
 
-#everyauth.twitter
-#    .consumerKey('CMkKT5wVGNukREhvC68M7g')
-#    .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
-
 exports.ExternalAuth = class ExternalAuth
   constructor: (@users) ->
     self = @
@@ -11,31 +7,13 @@ exports.ExternalAuth = class ExternalAuth
       .appId("262276250559418")
       .appSecret("291a6d02a5026ce17d00c7f35716a879")
       .findOrCreateUser((session, accessToken, accessTokExtra, profile) ->
-        promise = @Promise()
-        self.users.getByProviderId profile.id, (err, user) =>
-          if err
-            promise.fail "Error finding user from provider id. #{err}"
-          else
-            if not user
-              self.createUser('facebook', profile, session, promise)
-            else
-              self.touchUser(user, session, promise)
-        promise
+        self.checkin(@, session, profile, "facebook")
       ).redirectPath "/"
     everyauth.twitter
       .consumerKey('CMkKT5wVGNukREhvC68M7g')
       .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
       .findOrCreateUser((session, accessToken, accessTokenSecret, profile) ->
-        promise = @Promise()
-        self.users.getByProviderId profile.id, (err, user) =>
-          if err
-            promise.fail "Error finding user from provider id. #{err}"
-          else
-            if not user
-              self.createUser('twitter', profile, session, promise)
-            else
-              self.touchUser(user, session, promise)
-        promise
+        self.checkin(@, session, profile, "twitter")
       ).redirectPath "/"
     everyauth.everymodule.handleLogout (req, res) ->
       req.session.userId = null
@@ -47,7 +25,19 @@ exports.ExternalAuth = class ExternalAuth
 
   # private
 
-  createUser: (provider, profile, session, promise) =>
+  checkin: (context, session, profile, provider) ->
+    promise = context.Promise()
+    @users.getByProviderId profile.id, (err, user) =>
+      if err
+        promise.fail "Error finding user from provider id. #{err}"
+      else
+        if not user
+          @createUser(promise, session, profile, provider)
+        else
+          @touchUser(promise, session, user)
+    promise
+
+  createUser: (promise, session, profile, provider) =>
     @users.newId (err, id) =>
       if err
         promise.fail "Cannot generate new id for user. #{err}"
@@ -60,13 +50,13 @@ exports.ExternalAuth = class ExternalAuth
           providerName: profile.name
           created: now
           lastConnected: now
-        @saveUser(user, session, promise)
+        @saveUser(promise, session, user)
 
-  touchUser: (user, session, promise) =>
+  touchUser: (promise, session, user) =>
     user.lastConnected = new Date()
-    @saveUser(user, session, promise)
+    @saveUser(promise, session, user)
 
-  saveUser: (user, session, promise) =>
+  saveUser: (promise, session, user) =>
     @users.set(user)
     session.userId = user.id
     session.save()

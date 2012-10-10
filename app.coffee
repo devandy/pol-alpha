@@ -29,7 +29,7 @@ ss.client.formatters.add require("ss-coffee")
 ss.client.formatters.add require("ss-stylus")
 
 # Request Responders
-ss.responders.add require('ss-heartbeat-responder', {port: 6379, logging: 2})
+ss.responders.add require('ss-heartbeat-responder', {port: 6379})
 
 # Session support
 ss.session.store.use('redis');
