@@ -1,7 +1,7 @@
 {
   "name": "pol-alpha",
   "description": "The card game simulator",
-  "version": "0.0.1-4",
+  "version": "0.0.1-7",
   "author": {
     "name": "Andrea Biagini",
     "email": "andy.biagini@gmail.com"
