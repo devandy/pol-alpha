@@ -1,6 +1,7 @@
 _ = require("underscore")._
 fs = require("fs")
 redis = require("redis")
+config = require("./config")
 
 exports.CardsArchive = class CardsArchive
   constructor: (@set = 'm13') ->
@@ -25,7 +26,9 @@ exports.CardsArchive = class CardsArchive
 
 exports.UserArchive = class UserArchive
   constructor: ->
-    @client = redis.createClient()
+    @client = redis.createClient(config.db)
+    @client.auth config.db.pass, (err) ->
+      throw err if err
 
   set: (user) =>
     @client.set "users:#{user.id}", JSON.stringify(user)

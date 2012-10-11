@@ -16,7 +16,7 @@ module.exports = Backbone.Router.extend
     "game": "game"
     "logout": "logout"
 
-  constructor: (user) ->
+  initialize: (user) ->
     ss.heartbeatStart()
     new Views.ToolbarView(user: user).writeTo $('#toolbar')
 

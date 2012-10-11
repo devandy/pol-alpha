@@ -1,14 +1,28 @@
 {
   "name": "pol-alpha",
-  "description": "An awesome real time application",
-  "version": "0.0.1",
-  "author": "Me <me@mydomain.com>",
+  "description": "The card game simulator",
+  "version": "0.0.1-4",
+  "author": {
+    "name": "Andrea Biagini",
+    "email": "andy.biagini@gmail.com"
+  },
   "private": true,
-  "engines": { "node": ">= 0.8.0" },
+  "engines": {
+    "node": ">= 0.8.x"
+  },
   "dependencies": {
-    "socketstream": "0.3.x",
+    "async": "0.1.22",
+    "eventemitter2": "0.4.10",
+    "everyauth": "0.3.0",
+    "redis": "0.8.1",
+    "socketstream": "0.3.2",
     "ss-coffee": "0.1.x",
+    "ss-hogan": "0.1.x",
     "ss-stylus": "0.1.x",
-    "ss-hogan": "0.1.x"
+    "underscore": "1.4.1"
+  },
+  "subdomain": "devandy.pol-alpha",
+  "scripts": {
+    "start": "app.coffee"
   }
 }
