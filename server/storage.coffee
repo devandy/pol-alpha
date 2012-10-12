@@ -19,11 +19,6 @@ exports.CardsArchive = class CardsArchive
   readAll: ->
     @items
 
-#redis://nodejitsu:03fe3dce079dfcd12560cdebe05631a0@fish.redistogo.com:9201/
-#@client= redis.createClient(9201, "fish.redistogo.com")
-#client.auth '03fe3dce079dfcd12560cdebe05631a0', (err) ->
-# throw err if err
-
 exports.UserArchive = class UserArchive
   constructor: ->
     @client = redis.createClient(config.db)
