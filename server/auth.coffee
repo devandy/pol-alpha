@@ -1,20 +1,21 @@
 everyauth = require("everyauth")
+config = require("./config")
 
 exports.ExternalAuth = class ExternalAuth
   constructor: (@users) ->
     self = @
     everyauth.facebook
-      .appId("262276250559418")
-      .appSecret("291a6d02a5026ce17d00c7f35716a879")
-      .findOrCreateUser((session, accessToken, accessTokExtra, profile) ->
+      .appId(config.auth.facebook.id)
+      .appSecret(config.auth.facebook.secret)
+      .redirectPath("/")
+      .findOrCreateUser (session, accessToken, accessTokExtra, profile) ->
         self.checkin(@, session, profile, "facebook")
-      ).redirectPath "/"
     everyauth.twitter
-      .consumerKey('CMkKT5wVGNukREhvC68M7g')
-      .consumerSecret('kqSXhbPzPM3CY5NT7Cbuk1ezsJfrWGNBd37Sdi7unQw')
-      .findOrCreateUser((session, accessToken, accessTokenSecret, profile) ->
+      .consumerKey(config.auth.twitter.id)
+      .consumerSecret(config.auth.twitter.secret)
+      .redirectPath("/")
+      .findOrCreateUser (session, accessToken, accessTokenSecret, profile) ->
         self.checkin(@, session, profile, "twitter")
-      ).redirectPath "/"
     everyauth.everymodule.handleLogout (req, res) ->
       req.session.userId = null
       req.logout() # The logout method is added for you by everyauth, too

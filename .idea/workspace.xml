@@ -29,16 +29,52 @@
       <file leaf-file-name="config.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/config.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="53" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+            <state line="12" column="130" selection-start="768" selection-end="787" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ss-heartbeat-responder.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="2" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="12" selection-start="82" selection-end="82" vertical-scroll-proportion="0.40691927">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/auth.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="24" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="redis-cli-pro.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/redis-cli-pro.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="63" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ss-heartbeat-responder.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/ss-heartbeat-responder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="-0.54471546">
+            <state line="16" column="46" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,7 +83,7 @@
       <file leaf-file-name="app.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="71" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+            <state line="5" column="26" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -63,22 +99,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/commit.sh" />
-        <option value="$PROJECT_DIR$/server/auth.coffee" />
-        <option value="$PROJECT_DIR$/client/code/pol/entry.coffee" />
-        <option value="$PROJECT_DIR$/client/code/pol/models_store.coffee" />
         <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/config.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/app.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/router.coffee" />
         <option value="$PROJECT_DIR$/server/responder.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/storage.coffee" />
         <option value="$PROJECT_DIR$/redis-server.sh" />
         <option value="$PROJECT_DIR$/redis-cli.sh" />
-        <option value="$PROJECT_DIR$/server/config.coffee" />
         <option value="$PROJECT_DIR$/app.coffee" />
+        <option value="$PROJECT_DIR$/redis-cli-pro.sh" />
         <option value="$PROJECT_DIR$/server/ss-heartbeat-responder.coffee" />
+        <option value="$PROJECT_DIR$/server/config.coffee" />
+        <option value="$PROJECT_DIR$/server/auth.coffee" />
+        <option value="$PROJECT_DIR$/node_modules/everyauth/lib/modules/twitter.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -163,20 +199,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pol-alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pol-alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pol-alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -342,8 +364,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7015915" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.227649" sideWeight="0.29840848" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22930464" sideWeight="0.29840848" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -352,7 +375,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7015915" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -414,27 +436,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/storage.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="73" selection-start="131" selection-end="138" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ss-heartbeat-responder.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/storage.coffee">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="17" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -450,33 +451,14 @@
         <state line="1091" column="60" selection-start="38041" selection-end="38048" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/auth.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/socketstream/src/socketstream.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="10" selection-start="608" selection-end="608" vertical-scroll-proportion="0.026573427" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/storage.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/redis-server.sh">
@@ -493,23 +475,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.coffee">
+    <entry file="file://$PROJECT_DIR$/redis-cli-pro.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="71" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="53" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+        <state line="3" column="63" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/ss-heartbeat-responder.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="-0.54471546">
+        <state line="16" column="46" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/storage.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="392" selection-end="392" vertical-scroll-proportion="0.63535035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/auth.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="24" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/everyauth/lib/modules/twitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="38" selection-start="465" selection-end="465" vertical-scroll-proportion="0.3707317">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="130" selection-start="768" selection-end="787" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="2" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="12" selection-start="82" selection-end="82" vertical-scroll-proportion="0.40691927">
           <folding />
         </state>
       </provider>

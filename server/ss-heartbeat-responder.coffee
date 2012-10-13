@@ -14,7 +14,7 @@ module.exports = (responderId, config, ss) ->
   host = config and config.host or "127.0.0.1"
   pass = config and config.pass or ""
   options = config and config.options or {}
-  db = (if (config and config.fakeRedis) then require("fakeredis").createClient() else redis.createClient(port, host, options))
+  db = redis.createClient(port, host, options)
   db.auth pass, (err) ->
     throw err if err
   ss.client.send "mod", "heartbeat-responder", loadFile("responder.js")

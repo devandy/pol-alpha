@@ -1,7 +1,7 @@
 {
   "name": "pol-alpha",
   "description": "The card game simulator",
-  "version": "0.0.1-11",
+  "version": "0.0.1-14",
   "author": {
     "name": "Andrea Biagini",
     "email": "andy.biagini@gmail.com"
@@ -21,6 +21,17 @@
     "ss-stylus": "0.1.x",
     "underscore": "1.4.1"
   },
+  "bundleDependencies": [
+    "async",
+    "eventemitter2",
+    "everyauth",
+    "redis",
+    "socketstream",
+    "ss-coffee",
+    "ss-hogan",
+    "ss-stylus",
+    "underscore"
+  ],
   "subdomain": "devandy.pol-alpha",
   "scripts": {
     "start": "app.coffee"
