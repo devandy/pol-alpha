@@ -30,7 +30,7 @@ ss.client.formatters.add require("ss-coffee")
 ss.client.formatters.add require("ss-stylus")
 
 # Request Responders
-ss.responders.add require('./server/ss-heartbeat-responder', config.db)
+ss.responders.add require('./server/ss-heartbeat-responder'), config.db
 
 # Session support
 ss.session.store.use('redis', config.db);

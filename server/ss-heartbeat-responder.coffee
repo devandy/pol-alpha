@@ -3,21 +3,14 @@ path = require("path")
 EventEmitter = require("events").EventEmitter
 redis = require("redis")
 async = require("async")
+
 module.exports = (responderId, config, ss) ->
-  name = undefined
-  port = undefined
-  host = undefined
-  db = undefined
-  purgeDelay = undefined
-  expireDelay = undefined
-  beatDelay = undefined
-  logging = undefined
   name = config and config.name or "heartbeat"
   logging = config and config.logging or 0
   purgeDelay = config and config.purgeDelay or 25
   expireDelay = config and config.expireDelay or 40
   beatDelay = config and config.beatDelay or 30
-  post = config and config.port or 6479
+  port = config and config.port or 6479
   host = config and config.host or "127.0.0.1"
   pass = config and config.pass or ""
   options = config and config.options or {}
@@ -30,7 +23,6 @@ module.exports = (responderId, config, ss) ->
   triggerEvent = (ev, sessionId, socketId) ->
     ss.session.find sessionId, socketId, (session) ->
       ss[name].emit ev, session
-
 
   ss[name].isConnected = (sid, cb) ->
     db.hexists name, sid, cb
