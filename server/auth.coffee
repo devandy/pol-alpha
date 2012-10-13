@@ -7,15 +7,17 @@ exports.ExternalAuth = class ExternalAuth
     everyauth.facebook
       .appId(config.auth.facebook.id)
       .appSecret(config.auth.facebook.secret)
-      .redirectPath("/")
-      .findOrCreateUser (session, accessToken, accessTokExtra, profile) ->
+      .findOrCreateUser((session, accessToken, accessTokExtra, profile) ->
         self.checkin(@, session, profile, "facebook")
+      )
+      .redirectPath("/")
     everyauth.twitter
       .consumerKey(config.auth.twitter.id)
       .consumerSecret(config.auth.twitter.secret)
-      .redirectPath("/")
-      .findOrCreateUser (session, accessToken, accessTokenSecret, profile) ->
+      .findOrCreateUser((session, accessToken, accessTokenSecret, profile) ->
         self.checkin(@, session, profile, "twitter")
+      )
+      .redirectPath("/")
     everyauth.everymodule.handleLogout (req, res) ->
       req.session.userId = null
       req.logout() # The logout method is added for you by everyauth, too

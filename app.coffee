@@ -57,3 +57,13 @@ server.listen 3000
 # Start SocketStream
 ss.start server
 
+# assuming io is the Socket.IO server object
+# io.configure ->
+#   io.set "transports", ["xhr-polling"]
+#   io.set "polling duration", 10
+
+# ss.ws.transport.use "socketio",
+#   client:
+#     transports: ["websocket", "htmlfile", "xhr-polling", "jsonp-polling"]
+#   server: (io) ->
+#     io.set "log level", 4
