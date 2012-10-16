@@ -47,8 +47,12 @@ ss.client.packAssets() if ss.env is "production"
 # Setup heartbeats
 ss.api.heartbeat.on 'connect', (session) ->
   console.log session.userId + " has connected"
+  ss.api.heartbeat.allConnected (sessions) ->
+    ss.publish.all 'onlineusers:change', sessions.length
 ss.api.heartbeat.on 'disconnect', (session) ->
   console.log session.userId + " has disconnected"
+  ss.api.heartbeat.allConnected (sessions) ->
+    ss.publish.all 'onlineusers:change', sessions.length
 
 # Start web server
 server = http.Server(ss.http.middleware)

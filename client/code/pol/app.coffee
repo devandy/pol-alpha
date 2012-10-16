@@ -1,7 +1,7 @@
 Views = require "./views"
 Router = require "./router"
 
-ss.rpc 'pol.getCurrentUser', (user) =>
+ss.rpc 'system.user', (user) =>
   if user
     window.router = new Router(user)
     Backbone.history.start()

@@ -14,7 +14,7 @@ ss.server.on 'ready', ->
   # Wait for the DOM to finish loading
   jQuery ->
 
-    #Facebok fix
+    # Facebok fix
     window.location.hash = '' if window.location.hash == '#_=_'
 
     # Load app
