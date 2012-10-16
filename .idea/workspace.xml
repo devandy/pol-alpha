@@ -2,38 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31896b7f-a0e2-4e1f-a444-5aa47cc5022b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/code/pol/game_route.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/code/pol/lobby_route.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/code/pol/logout_route.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/rpc/game.coffee" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/.gitmodules" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/lib/async.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/async/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/lib/backend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/lib/connection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/lib/helpers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/node_modules/fakeredis/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ss-heartbeat-responder/responder.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/server/rpc/pol.coffee" afterPath="$PROJECT_DIR$/server/rpc/system.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.coffee" afterPath="$PROJECT_DIR$/app.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/code/pol/app.coffee" afterPath="$PROJECT_DIR$/client/code/pol/app.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/code/pol/entry.coffee" afterPath="$PROJECT_DIR$/client/code/pol/entry.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/code/pol/router.coffee" afterPath="$PROJECT_DIR$/client/code/pol/router.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/lobby.html" afterPath="$PROJECT_DIR$/client/templates/lobby.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/code/pol/lobby_route.coffee" afterPath="$PROJECT_DIR$/client/code/pol/lobby_route.coffee" />
     </list>
     <ignored path="pol-alpha.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lobby_route.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="lobby_route.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/code/pol/lobby_route.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+            <state line="9" column="30" selection-start="238" selection-end="238" vertical-scroll-proportion="0.272293">
               <folding />
             </state>
           </provider>
@@ -68,25 +39,7 @@
       <file leaf-file-name="system.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/rpc/system.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="277" selection-end="347" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game_route.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/code/pol/game_route.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="38" selection-start="295" selection-end="295" vertical-scroll-proportion="5.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/rpc/game.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
+            <state line="3" column="42" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,7 +48,25 @@
       <file leaf-file-name="app.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="9" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+            <state line="54" column="31" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/code/pol/views.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="6" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lobby.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/lobby.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -128,16 +99,16 @@
         <option value="$PROJECT_DIR$/client/code/pol/app.coffee" />
         <option value="$PROJECT_DIR$/server/rpc/system.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/game_route.coffee" />
-        <option value="$PROJECT_DIR$/app.coffee" />
         <option value="$PROJECT_DIR$/client/code/pol/lobby_route.coffee" />
+        <option value="$PROJECT_DIR$/app.coffee" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
-    <option name="width" value="1377" />
-    <option name="height" value="905" />
+    <option name="x" value="49" />
+    <option name="y" value="24" />
+    <option name="width" value="1231" />
+    <option name="height" value="776" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -249,6 +220,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pol-alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pol-alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="code" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -283,8 +272,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -373,13 +362,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1377" height="905" extended-state="6" />
-    <editor active="false" />
+    <frame x="49" y="24" width="1231" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.91511935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2767584" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22781065" sideWeight="0.084880635" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.227649" sideWeight="0.72324157" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -450,11 +439,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/code/pol/entry.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="6" selection-start="403" selection-end="403" vertical-scroll-proportion="0.41758242" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/ss-heartbeat-responder.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -482,9 +466,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy.sh">
@@ -502,11 +484,6 @@
         <state line="14" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.3653846" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/code/pol/views.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="6" selection-start="367" selection-end="367" vertical-scroll-proportion="0.33241758" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/rpc/game.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
@@ -514,30 +491,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/code/pol/lobby_route.coffee">
+    <entry file="file://$PROJECT_DIR$/client/code/pol/views.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+        <state line="19" column="6" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.coffee">
+    <entry file="file://$PROJECT_DIR$/client/templates/lobby.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="9" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/rpc/system.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="277" selection-end="347" vertical-scroll-proportion="0.0">
+        <state line="3" column="42" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/code/pol/game_route.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="38" selection-start="295" selection-end="295" vertical-scroll-proportion="5.0">
+        <state line="10" column="38" selection-start="295" selection-end="295" vertical-scroll-proportion="0.18471338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="31" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/code/pol/lobby_route.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="30" selection-start="238" selection-end="238" vertical-scroll-proportion="0.272293">
           <folding />
         </state>
       </provider>

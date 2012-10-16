@@ -9,5 +9,5 @@ module.exports = ->
     view = new Views.LobbyView().writeTo $('#content')
     ss.rpc 'system.onlineusers', (response) ->
       view.render(usersCount: response)
-    ss.event.on 'onlineusers:change', (data) ->
+    ss.event.on 'system.onlineusers.change', (data) ->
       view.render(usersCount: data)
