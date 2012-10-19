@@ -2,7 +2,7 @@ Models = require('./models')
 Commands = require('./commands')
 _ = require('underscore')
 
-exports.Game = class Game
+exports = class Game
   constructor: (archive) ->
     @cards = []
     @players = []

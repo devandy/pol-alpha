@@ -12,5 +12,8 @@ exports.actions = (req, res, ss) ->
     ss.heartbeat.allConnected (sessions) ->
       res(sessions.length)
 
+  rooms: ->
+    res(ss.api.rooms)
+
 
 

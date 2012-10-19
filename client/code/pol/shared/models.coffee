@@ -27,20 +27,20 @@ exports.Model = class Model extends EventEmitter2
     model
 
 
-#exports.ObservableCollection = class ObservableCollection extends EventEmitter2
-#
-#  push: (item) ->
-#    Array.prototype.push.call(@, item);
-#    @emit 'push', item
-#
-#  remove: (item) ->
-#    Array.prototype.remove.call(@, item);
-#    @emit 'remove', item
-#
-#  toRaw: ->
-#    _.map(@, (item) -> item.toRaw())
-#
-#  @parse: (rawItems) ->
-#    collection = new ObservableCollection
-#    collection.push(Model.parse(item)) for item in rawItems
-#    collection
+exports.ObservableCollection = class ObservableCollection extends EventEmitter2
+
+  push: (item) ->
+    Array.prototype.push.call(@, item);
+    @emit 'push', item
+
+  remove: (item) ->
+    Array.prototype.remove.call(@, item);
+    @emit 'remove', item
+
+  toRaw: ->
+    _.map(@, (item) -> item.toRaw())
+
+  @parse: (rawItems) ->
+    collection = new ObservableCollection
+    collection.push(Model.parse(item)) for item in rawItems
+    collection

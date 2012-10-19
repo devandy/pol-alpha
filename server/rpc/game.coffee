@@ -1,4 +1,4 @@
-Core = require("../../client/code/pol/shared/core")
+Game = require("../../client/code/pol/shared/game")
 Commands = require("../../client/code/pol/shared/commands")
 Storage = require("../storage")
 _ = require("underscore")
@@ -12,7 +12,7 @@ exports.actions = (req, res, ss) ->
 
   start: =>
     new Storage.CardsArchive().load (archive) =>
-      game = new Core.Game()
+      game = new Game()
       game.load(archive)
       _.each game.cards, (card) ->
         card.on 'change', (attributes, remote) ->

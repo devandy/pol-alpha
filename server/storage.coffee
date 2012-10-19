@@ -1,7 +1,6 @@
 _ = require("underscore")._
 fs = require("fs")
 redis = require("redis")
-config = require("./config")
 
 exports.CardsArchive = class CardsArchive
   constructor: (@set = 'm13') ->
@@ -20,7 +19,7 @@ exports.CardsArchive = class CardsArchive
     @items
 
 exports.UserArchive = class UserArchive
-  constructor: ->
+  constructor: (config) ->
     @client = redis.createClient(config.db)
     @client.auth config.db.pass, (err) ->
       throw err if err
@@ -40,3 +39,4 @@ exports.UserArchive = class UserArchive
   newId: (done) =>
     @client.incr "users", (err, id) =>
       done err, id
+

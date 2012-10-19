@@ -1,9 +1,11 @@
 http = require("http")
 ss = require("socketstream")
 Storage = require("./server/storage")
+Rooms = require("./client/code/pol/shared/rooms")
 config = require("./server/config")
 
-users = new Storage.UserArchive
+users = new Storage.UserArchive(config)
+rooms = new Rooms()
 
 ss.client.define "pol",
   view: "pol.html"
@@ -24,6 +26,7 @@ ss.http.middleware.append auth.middleware()
 
 # Api setup
 ss.api.add("users", users)
+ss.api.add("rooms", rooms)
 
 # Code Formatters
 ss.client.formatters.add require("ss-coffee")

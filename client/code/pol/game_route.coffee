@@ -1,7 +1,7 @@
 ss = require('socketstream')
 Views = require('./views')
 ModelsStore = require "./models_store"
-Core = require "./shared/core"
+Game = require "./shared/game"
 Commands = require "./shared/commands"
 
 class RemoteCommandHandler
@@ -16,7 +16,7 @@ module.exports = ->
     router.route "game", "game", ->
       ss.rpc 'game.start', (response) ->
         new Views.GameView().writeTo $('#content')
-        game = Core.Game.parse(response)
+        game = Game.parse(response)
         commandHandler = new RemoteCommandHandler(new Commands.CommandHandler(game))
         modelsStore = new ModelsStore
         modelsStore.addRange(game.cards)

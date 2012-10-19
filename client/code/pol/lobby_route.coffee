@@ -1,13 +1,15 @@
 ss = require('socketstream')
-Views = require('./views')
+LobbyView = require('./lobby_view')
 
 module.exports = ->
   register: (router) ->
-    router.route "", "lobby", @action
+    router.route "", "lobby", @run
 
-  action: ->
-    view = new Views.LobbyView().writeTo $('#content')
-    ss.rpc 'system.onlineusers', (response) ->
-      view.render(usersCount: response)
+  run: ->
+    view = new LobbyView().writeTo $('#content')
+    ss.rpc 'system.onlineusers', (onlineusers) ->
+      view.render(usersCount: onlineusers)
+    ss.rpc 'system.rooms', (rooms) ->
+      view.render(rooms: rooms)
     ss.event.on 'system.onlineusers.change', (data) ->
       view.render(usersCount: data)

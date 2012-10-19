@@ -17,13 +17,6 @@ class ToolbarView extends BaseView
   constructor: (@model) ->
     @widget = $(@template('toolbar', @model))
 
-class LobbyView extends BaseView
-  constructor: () ->
-    @widget = $(@template('lobby'))
-
-  render: (model) =>
-    @widget.find('span').text(model.usersCount)
-
 class GameView extends BaseView
   constructor: () ->
     @widget = $(@template('game'))
@@ -164,7 +157,6 @@ class PlayerStatusView extends BaseView
     @widget.find('.status .life').text(@model.get('life'))
     @widget.find('.status .hand-count').text('5')
 
-exports.LobbyView = LobbyView
 exports.ToolbarView = ToolbarView
 exports.GameView = GameView
 exports.CardView = CardView
