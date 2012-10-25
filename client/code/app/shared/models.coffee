@@ -1,7 +1,7 @@
 uuid = require('./utils').uuid
 EventEmitter2 = require('eventemitter2').EventEmitter2
 
-exports.Model = class Model extends EventEmitter2
+class Model extends EventEmitter2
   constructor: (attributes = {}) ->
     @id = uuid()
     @attributes = {id: @id}
@@ -26,8 +26,9 @@ exports.Model = class Model extends EventEmitter2
     model.id = rawModel.id
     model
 
+module.exports.Model = Model
 
-exports.ObservableCollection = class ObservableCollection extends EventEmitter2
+class ObservableCollection extends EventEmitter2
 
   push: (item) ->
     Array.prototype.push.call(@, item);
@@ -44,3 +45,5 @@ exports.ObservableCollection = class ObservableCollection extends EventEmitter2
     collection = new ObservableCollection
     collection.push(Model.parse(item)) for item in rawItems
     collection
+
+module.exports.ObservableCollection = ObservableCollection

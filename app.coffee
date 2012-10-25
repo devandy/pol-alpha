@@ -1,16 +1,16 @@
 http = require("http")
 ss = require("socketstream")
 Storage = require("./server/storage")
-Rooms = require("./client/code/pol/shared/rooms")
+Rooms = require("./client/code/app/shared/rooms")
 config = require("./server/config")
 
 users = new Storage.UserArchive(config)
 rooms = new Rooms()
 
 ss.client.define "pol",
-  view: "pol.html"
+  view: "default.html"
   css: ["game.styl", "libs"]
-  code: ["libs", "pol", "system"]
+  code: ["libs", "app", "system"]
   tmpl: "*"
 
 ss.http.route "/", (req, res) ->

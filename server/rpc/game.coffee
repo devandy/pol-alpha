@@ -1,5 +1,5 @@
-Game = require("../../client/code/pol/shared/game")
-Commands = require("../../client/code/pol/shared/commands")
+Game = require("../../client/code/app/shared/game")
+Commands = require("../../client/code/app/shared/commands")
 Storage = require("../storage")
 _ = require("underscore")
 

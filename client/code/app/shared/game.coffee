@@ -2,7 +2,7 @@ Models = require('./models')
 Commands = require('./commands')
 _ = require('underscore')
 
-exports = class Game
+class Game
   constructor: (archive) ->
     @cards = []
     @players = []
@@ -66,3 +66,5 @@ exports = class Game
       avatar: 'http://www.gravatar.com/avatar/d878a83b462e89bb0d8ac819a3d71a30.png'
       life: 20
     )
+
+module.exports = Game

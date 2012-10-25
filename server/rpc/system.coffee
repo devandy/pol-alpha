@@ -13,7 +13,7 @@ exports.actions = (req, res, ss) ->
       res(sessions.length)
 
   rooms: ->
-    res(ss.api.rooms)
+    res(ss.rooms)
 
 
 

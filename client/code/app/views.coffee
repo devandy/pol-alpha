@@ -157,6 +157,7 @@ class PlayerStatusView extends BaseView
     @widget.find('.status .life').text(@model.get('life'))
     @widget.find('.status .hand-count').text('5')
 
+exports.BaseView = BaseView
 exports.ToolbarView = ToolbarView
 exports.GameView = GameView
 exports.CardView = CardView

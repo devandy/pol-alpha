@@ -1,6 +1,6 @@
 _ = require('underscore')
 
-exports.MoveCardCommand = class MoveCardCommand
+class MoveCardCommand
   constructor: (@game, @parameters) ->
 
   execute: ->
@@ -16,28 +16,36 @@ exports.MoveCardCommand = class MoveCardCommand
       container: @parameters.container
       rotated: @parameters.rotated
 
-exports.RotateCardCommand = class RotateCardCommand
+module.exports.MoveCardCommand = MoveCardCommand
+
+class RotateCardCommand
   constructor: (@game, @parameters) ->
 
   execute: ->
     card = @game.findCard(@parameters.id)
     card.set(rotated: not card.get('rotated'))
 
-exports.FlipCardCommand = class FlipCardCommand
+module.exports.RotateCardCommand = RotateCardCommand
+
+class FlipCardCommand
   constructor: (@game, @parameters) ->
 
   execute: ->
     card = @game.findCard(@parameters.id)
     card.set(flipped: not card.get('flipped'))
 
-exports.IncrementLifeCommand = class IncrementLifeCommand
+module.exports.FlipCardCommand = FlipCardCommand
+
+class IncrementLifeCommand
   constructor: (@game, @parameters) ->
 
   execute: ->
     player = @game.findPlayer(@parameters.id)
     player.set(life: player.get('life') + 1)
 
-exports.CommandHandler = class CommandHandler
+module.exports.IncrementLifeCommand = IncrementLifeCommand
+
+class CommandHandler
   constructor: (@receiver) ->
 
   execute: (parameters) =>
@@ -48,3 +56,5 @@ exports.CommandHandler = class CommandHandler
   createCommand: (parameters) ->
     command = _.find(exports, (command) -> command.name == parameters.name + 'Command')
     new command(@receiver, parameters)
+
+module.exports.CommandHandler = CommandHandler
