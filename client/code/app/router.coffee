@@ -1,14 +1,21 @@
 Views = require "./views"
-LobbyRoute = require "./lobby_route"
-LogoutRoute = require "./logout_route"
-GameRoute = require "./game_route"
+LobbyController = require "./lobby_controller"
+GameController = require "./game_controller"
 
-module.exports = Backbone.Router.extend
+Router = Backbone.Router.extend
   initialize: (user) ->
     ss.heartbeatStart()
 
     new Views.ToolbarView(user: user).writeTo $('#toolbar')
 
-    new LobbyRoute().register(@)
-    new LogoutRoute().register(@)
-    new GameRoute().register(@)
+    @route "", "lobby", ->
+      new LobbyController().show()
+
+    @route "logout", "logout", ->
+      ss.heartbeatStop()
+      window.location = "/logout"
+
+    @route "game", "game", ->
+      new GameController().show()
+
+module.exports = Router
