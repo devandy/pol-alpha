@@ -15,22 +15,26 @@
     "eventemitter2": "0.4.10",
     "everyauth": "0.3.0",
     "redis": "0.8.1",
+    "should": "1.2.1",
     "socketstream": "0.3.2",
     "ss-coffee": "0.1.x",
     "ss-hogan": "0.1.x",
     "ss-stylus": "0.1.x",
-    "underscore": "1.4.1"
+    "underscore": "1.4.1",
+    "zombie": "2.0.x"
   },
   "bundleDependencies": [
     "async",
     "eventemitter2",
     "everyauth",
     "redis",
+    "should",
     "socketstream",
     "ss-coffee",
     "ss-hogan",
     "ss-stylus",
-    "underscore"
+    "underscore",
+    "zombie"
   ],
   "subdomain": "devandy.pol-alpha",
   "scripts": {
