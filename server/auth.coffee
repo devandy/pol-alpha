@@ -20,7 +20,7 @@ exports.ExternalAuth = class ExternalAuth
       .redirectPath("/")
     everyauth.everymodule.handleLogout (req, res) ->
       req.session.userId = null
-      req.logout() # The logout method is added for you by everyauth, too
+      req.logout()
       @redirect res, @logoutRedirectPath()
 
   middleware: ->
