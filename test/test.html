@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="mocha.js"></script>
+    <script src="chai.js"></script>
+    <script>
+      mocha.setup('bdd');
+    </script>
+    <script src="login_test.js"></script>
+    <script>
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
+    </script>
+  </body>
+</html>
