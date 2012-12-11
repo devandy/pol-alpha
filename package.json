@@ -11,6 +11,7 @@
     "node": ">= 0.8.x"
   },
   "dependencies": {
+    "phantom": "https://github.com/amir20/phantomjs-node.git",
     "async": "0.1.22",
     "eventemitter2": "0.4.10",
     "everyauth": "0.3.0",
